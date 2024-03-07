@@ -1,0 +1,69 @@
+body{
+    margin: 10px;
+    
+}
+h1{
+    color: white;
+    -webkit-text-stroke: 2px black;
+    font-size: 40px;
+}
+
+.cabecalho{
+    background-color:rgb(0, 0, 0);
+    color: white;
+    border: 2px solid gray;
+    border-radius: 25px;
+    padding:10px;
+    text-align: center;
+    margin: 10px;
+    transition: 1s;
+}
+
+.banner{
+    background-color: darkgray;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border:5px solid black;
+    transition: 1s;
+}
+
+.rodape{
+    background-color: rgb(92, 92, 92);
+    color: white;
+    margin: 10px;
+}
+
+#destacado{
+    color: yellow;
+}
+
+#centralizado{
+text-align: center;
+
+}
+
+.cabecalho:hover{
+    color: rgb(182, 182, 182);
+    background-color: rgb(19, 19, 19);
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+
+.banner:hover{
+    border-color: red;
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+img{
+opacity: 0;
+transition: 3s;
+}
+
+img:hover{
+
+    opacity: 1;
+    
+}
