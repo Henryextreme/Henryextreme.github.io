@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    height: 100vh;
+}
+
+header{
+ display: flex;
+ justify-content: center;
+ font-size: 40px;
+ background-color: gray;
+ height: 5%;
+
+}
+
+main{
+    display: flex;
+    flex-flow: row;
+    border: 3px solid red;
+    height: 80%;
+}
+
+.Meio{
+    color: rgb(0, 0, 0);
+    width: 70%;
+    border: 1px solid blue;
+    display: flex;
+    justify-content:  space-around;
+    
+}
+
+.Lateral{
+    color:red;
+}
+
+footer{
+    display: flex;
+    height: 15%;
+    color: blueviolet;
+}
+
+.um{
+ 
+ border: 3px solid green;
+ height: 10%;
+ width: 10%;
+
+}
+
+.dois{
+ 
+ border: 3px yellow solid;
+ height: 10%;
+ width: 10%;
+}
+
+.tres{
+ border: 3px solid black;
+ height: 10%;
+ width: 10%;
+}
+
+.imagem > img{
+    height: 75px;
+    
+}
