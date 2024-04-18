@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(0, 37, 0);
+    background-color: rgb(26, 75, 48);
 }
 nav{
 background-color:rgb(0, 74, 77) ;
@@ -12,43 +12,52 @@ gap: 100px;
 justify-content:center ;
 align-items: center;
 border-radius: 10px;
+gap:1000px;
+
 }
 
-nav>a{
+div>a{
     color: rgb(0, 255, 42);
     border-radius: 5px;
     text-decoration: none;
     transition: 0.5s;
+    font-size: 20px ;
+   
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-nav> a:hover{
-    background-color: rgb(0, 167, 89);
+div> a:hover{
+    background-color: rgb(58, 136, 99);
     text-decoration: underline;
     font-size: 30px;
     color: white;
     
 }
 
-img{
-    height: 200px;
-}
 
-
-div{
+.Logo{
 background-color:rgb(0, 74, 77);
 margin: 0 100px;
 display: flex;
 justify-content: center;
 border-radius: 10px;
 border: 3px solid;
+border: 1px solid red;
+}
 
-
+nav>div{
+    width: 900px;
+    border: 1px solid red;
+    gap: 100px;
+    display: flex;
 
 }
-div>img{
 
-height:100px;
-justify-content: center;
+.imagem_um{
+    margin-top: 100px;
+    border: 1px solid red;
+    height: 300px;
 
 }
+
+
