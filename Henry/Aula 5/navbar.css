@@ -2,9 +2,9 @@ body{
     background-color: rgb(26, 75, 48);
 }
 nav{
-background-color:#004a4d ;
+background-color:rgb(0, 74, 77) ;
 margin:0;
-border: 2px solid ;
+border: 3px solid ;
 height: 100px;
 display: flex;
 flex-direction: row;
@@ -12,8 +12,7 @@ gap: 100px;
 justify-content:center ;
 align-items: center;
 border-radius: 10px;
-gap:10%;
-width: 1v;
+gap:1000px;
 
 }
 
@@ -23,7 +22,6 @@ div>a{
     text-decoration: none;
     transition: 0.5s;
     font-size: 20px ;
-
    
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -43,12 +41,13 @@ margin: 0 100px;
 display: flex;
 justify-content: center;
 border-radius: 10px;
-
+border: 3px solid;
+border: 1px solid red;
 }
 
 nav>div{
-    width: 40%;
-    
+    width: 900px;
+    border: 1px solid red;
     gap: 100px;
     display: flex;
 
@@ -56,40 +55,9 @@ nav>div{
 
 .imagem_um{
     margin-top: 100px;
-    border-radius: 30px;
+    border: 1px solid red;
     height: 300px;
 
 }
 
-input{
-font-size: 20px;
-height: 40px;
-width: 300px;
-border-radius: 30px;
-border:inset 4px rgb(5, 243, 5);
 
-}
-
-.dropdown{
-    
-    padding: 5px;
-    color: white;
-    font-size: 50px;
-    width: 60px;
-    margin: 50px;
-    > div{
-       background-color: rgb(0, 74, 77);
-       border: 3px solid green;
-       position: absolute;
-       display: none;
-       flex-direction: column;
-       margin-top: 40px;
-       
-       
-    }
-}
-
-.dropdown:hover > div{
-display: flex;
-
-}

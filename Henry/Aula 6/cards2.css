@@ -1,0 +1,49 @@
+a{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.thumb{
+    width: 250px;
+    height: 120px;
+    background-color: greenyellow;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    
+}
+
+.title{
+    background-color: rgb(142, 142, 245);
+    width: 246px;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    font-size: 15px;
+}
+
+.title > label{
+    background-color: pink;
+    padding: 5px;
+    margin: 4px;
+   
+}
+
+.views{
+    background-color: rgb(78, 78, 255);
+    width: 234px;
+    padding: 8px;
+    font-size: 12px;
+}
+
+.tempo {
+    background-color: rgb(0, 0, 0,0.7);
+    color: white;
+    margin: 8px;
+    padding: 2px;
+}
