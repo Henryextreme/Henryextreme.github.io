@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(32,44,60);
+    
+
+}
+.tudo{
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    background-color:  rgb(36, 47, 63);
+}
+.barra{
+    gap: 50px ;
+    display: flex;
+    flex-flow: row;
+}
+
+.botao{
+    display: flex;
+    text-decoration: none;
+    font-size: 30px;
+    color:rgba(67,148,159,255);
+}
+
+.jogos{
+    display: flex;
+    text-decoration: none;
+    gap: 10px ;
+    justify-content: space-around;
+
+}
+
+.imagem>img{
+    width: 250px;
+}
+
+.imagem{
+    flex-grow: 1;
+}
+
+.title{
+    text-decoration: none;
+    color: rgb(214, 214, 214);
+    font-size: 40px;
+    
+}
+
+
+.categoria{
+    text-decoration: none;
+    color: rgb(107, 107, 107);
+    font-size: 15px
+
+}
+
+.price{
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 30px;
+    flex-grow: 1;
+
+}
+
+.textos{
+    display: flex;
+    flex-flow: column;
+    flex-grow: 7;
+}
+
+
+
