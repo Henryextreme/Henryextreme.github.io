@@ -7,12 +7,12 @@ body{
     display: flex;
     flex-flow: column;
     gap: 30px;
-    background-color:  rgb(36, 47, 63);
 }
 .barra{
     gap: 50px ;
     display: flex;
     flex-flow: row;
+    
 }
 
 .botao{
@@ -27,11 +27,14 @@ body{
     text-decoration: none;
     gap: 10px ;
     justify-content: space-around;
+    background-color:  rgb(36, 47, 63);
+    
 
 }
 
 .imagem>img{
     width: 250px;
+    height: 100%;
 }
 
 .imagem{
@@ -68,4 +71,19 @@ body{
 }
 
 
+.cardsW:hover{
+    .jogos{
+    background-color: rgb(172, 208, 228);}
+}
+
+.cardsW:hover{
+    .title{
+        color: rgb(32,44,60);
+    }
+}
+.cardsW:hover{
+    .price{
+        color: rgb(32,44,60)
+    }
+}
 
