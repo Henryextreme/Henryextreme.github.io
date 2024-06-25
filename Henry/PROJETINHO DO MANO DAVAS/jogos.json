@@ -1,0 +1,23 @@
+{
+    "jogos": [
+      {
+        "online": "1",
+        "nome": "Barony",
+        "foto": "Barony.jpeg",
+        "descricao": "V4.1.0",
+        "link_download": "https://drive.google.com/uc?export=download&id=1DZX7Ix-nl7zifopgnPHxloewJl5BBDKX"
+      },
+      {
+        "nome": "Payday",
+        "foto": "",
+        "descricao": "",
+        "link_download": ""
+      },
+      {
+        "nome": "War Thunder",
+        "foto": "",
+        "descricao": "",
+        "link_download": ""
+      }
+    ]
+  }
