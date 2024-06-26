@@ -23,7 +23,8 @@ function criarcard(x) {
         document.getElementById("jogos").innerHTML += `
         <div class="jogo">
             <img class="foto" src="${jogos[x].foto}">
-            <div class="texto">
+            <label class="status" id="status${x}"></label>
+            <div class="texto" id="texto${x}">
                 <div class="title" id="title${x}">${jogos[x].nome}</div>
                 <div class="descricao">${jogos[x].descricao}</div>
             </div>
@@ -43,10 +44,16 @@ function criarcards() {
 }
 
 function ajustarFontSize(x) {
-    if (jogos[x].nome.length > 5) {
+    if (jogos[x].nome.length > 5 && jogos[x].nome.length < 10) {
         document.getElementById("title" + x).style.fontSize = 300 / jogos[x].nome.length + 'px';
+    }
+    else {
+        document.getElementById("title" + x).style.fontSize = '25px';
+    }
+    if (jogos[x].online == 0) {
+        document.getElementById("status" + x).innerHTML = "Offline"
     } else {
-        document.getElementById("title" + x).style.fontSize = '30px';
+        document.getElementById("status" + x).innerHTML = "Online"
     }
 }
 
