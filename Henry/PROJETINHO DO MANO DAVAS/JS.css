@@ -6,7 +6,7 @@ body{
     padding: 0;
     background-color:rgb(32,44,60) ;
     font-family: 'Courier New', Courier, monospace;
-    user-select: none;
+    user-select: text;
     display: flex;
     flex-direction: column;
 }
@@ -163,6 +163,11 @@ textarea:focus, input:focus, select:focus {
     
 }
 
+.jogo:hover{
+    width: 47vw;
+    background-color: rgb(4, 74, 136);
+}
+
 .title{
     color: white;
     font-size: 50px;
@@ -181,8 +186,17 @@ textarea:focus, input:focus, select:focus {
 
 .download{
     color: rgb(255, 0, 0);
-   flex-grow: 1;
+    flex-grow: 2;
+   
     
+}
+
+.download:hover{
+    color: rgb(47, 255, 0);
+}
+
+.title:hover{
+    color: gray;
 }
 
 .foto{
@@ -209,6 +223,7 @@ textarea:focus, input:focus, select:focus {
     color: white;
     border-radius: 10px;
     text-align: center;
+    user-select: text;
 }
 @media(max-width: 1200px){
     .jogo{

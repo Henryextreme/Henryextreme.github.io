@@ -1,10 +1,8 @@
 let jogos = [];
 online = -1
-abadi = 0
 function ifonline(x){
     online = x
     criarcards()
-    abadi++
 }
 async function carregarJogos() {
     try {
@@ -28,7 +26,6 @@ function criarcard(x) {
             <div class="texto">
                 <div class="title" id="title${x}">${jogos[x].nome}</div>
                 <div class="descricao">${jogos[x].descricao}</div>
-                 <div class="arthur">${abadi}</div>
             </div>
             <div class="download">
                 <a href="${jogos[x].link_download}" class="download"><i class="gg-software-download"></i></a>
