@@ -160,11 +160,11 @@ textarea:focus, input:focus, select:focus {
     width: 45vw;
     border-radius: 20px;
     border: solid 1px black;
+    transition: 0.5s;
     
 }
 
 .jogo:hover{
-    width: 47vw;
     background-color: rgb(4, 74, 136);
 }
 
