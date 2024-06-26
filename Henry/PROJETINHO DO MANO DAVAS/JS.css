@@ -7,6 +7,8 @@ body{
     background-color:rgb(32,44,60) ;
     font-family: 'Courier New', Courier, monospace;
     user-select: none;
+    display: flex;
+    flex-direction: column;
 }
 .barra{
     display: flex;
@@ -18,6 +20,7 @@ body{
     justify-content: center;
     height: 200px;
     overflow: auto;
+    overflow: hidden;
 }
 
 .barra :is(.inicio,.offline,.online){
@@ -86,6 +89,7 @@ textarea:focus, input:focus, select:focus {
     font-size: 20px;
     height: 50%;
     border: 2px solid black;
+    cursor: pointer;
 }
 
 .inicio:hover{
@@ -117,6 +121,7 @@ textarea:focus, input:focus, select:focus {
     transition: 0.5s;
     height: 50%;
     border: 2px solid black;
+    cursor: pointer;
 }
 
 .offline:hover{
@@ -143,6 +148,7 @@ textarea:focus, input:focus, select:focus {
 #jogos{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .jogo{
     background-color: rgb(6, 42, 73);
@@ -164,6 +170,7 @@ textarea:focus, input:focus, select:focus {
     width: 280px;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .descricao{
@@ -202,5 +209,28 @@ textarea:focus, input:focus, select:focus {
     color: white;
     border-radius: 10px;
     text-align: center;
+}
+@media(max-width: 1200px){
+    .jogo{
+        width: 90vw;
+        height: 35%;
+    }
+    .icone{
+        width: 130px;
+    }
+    .foto{
+        width: 150px;
+    }
+    .barra{
+       z-index: 1000;
+       height: 50%;
+    }
+    #search_bar{
+        height: 50%;
+    }
+    .texto{
+        width: 50%;
+        height: 50%;
+    }
 }
 

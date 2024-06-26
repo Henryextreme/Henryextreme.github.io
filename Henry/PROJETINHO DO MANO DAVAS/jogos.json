@@ -1,23 +1,191 @@
-{
-    "jogos": [
-      {
-        "online": "1",
-        "nome": "Barony",
-        "foto": "Barony.jpeg",
-        "descricao": "V4.1.0",
-        "link_download": "https://drive.google.com/uc?export=download&id=1DZX7Ix-nl7zifopgnPHxloewJl5BBDKX"
-      },
-      {
-        "nome": "Payday",
-        "foto": "",
-        "descricao": "",
-        "link_download": ""
-      },
-      {
-        "nome": "War Thunder",
-        "foto": "",
-        "descricao": "",
-        "link_download": ""
-      }
-    ]
+[
+  {
+      "online": "1",
+      "nome": "Barony",
+      "foto": "Images/Barony.jpeg",
+      "descricao": "V4.1.0",
+      "link_download": "https://drive.google.com/uc?export=download&id=1DZX7Ix-nl7zifopgnPHxloewJl5BBDKX"
+  },
+  {
+      "online": "1",
+      "nome": "Six Days in Fallujah",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "SCP 5K",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Demonologist",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Baldur's Gate 3",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Wolfpack",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Interplanetary",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "ICBM",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Wargame:Red Dragon",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Europa Universalis IV",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Civilization VI",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Stormworks:Build and Rescue",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Devour",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Brick Rigs",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "RimWorld",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Castle Crashers",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Moving Out 2",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "BattleBlock Theater",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Worms Revolution",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "GTFO",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "The Greatest Penguin Heist of All Time",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Party Animals",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Sniper Elite 4",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Cuphead",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "0",
+      "nome": "Devil May Cry 5",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "The Front",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
+  },
+  {
+      "online": "1",
+      "nome": "Phasmophobia",
+      "foto": "link-para-foto-jogo2.jpg",
+      "descricao": "Descrição do Jogo 2",
+      "link": "link-para-jogo2.com"
   }
+]
