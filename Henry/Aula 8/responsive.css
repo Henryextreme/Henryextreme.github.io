@@ -1,0 +1,66 @@
+body{
+    background-color: black;
+    transition: 0.25s;
+    counter-reset: contador;
+}
+
+h1{
+    color: white;
+    height: 100vh;
+}
+
+h1:nth-child(1){
+    background-color: red;
+}
+
+h1:nth-child(2){
+    background-color: green;
+}
+
+h1:nth-child(3){
+    background-color: red;
+}
+
+h1:nth-child(4){
+    background-color: red;
+}
+
+h1:nth-child(5){
+    background-color: red;
+}
+
+h1:before{
+counter-increment: contador;
+content: "Parte " counter(contador) "- ";
+}
+
+p{
+    color: white;
+}
+
+
+.dog{
+    width: 200px;
+    transition: 0.25s;
+}
+
+
+
+
+@media (max-width:1000px){
+    body{
+    background-color:black;
+    }
+    .dog{
+        border: white 2px solid;
+    }
+}
+
+@media(max-width:500px){
+    body{
+        background-color: grey;
+    }
+    .dog{
+        border: black 2px solid;
+    }
+}
