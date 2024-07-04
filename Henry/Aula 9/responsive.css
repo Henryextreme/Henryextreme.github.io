@@ -1,0 +1,42 @@
+h1{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+    border-radius: 80px;
+}
+.cards{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cards>div{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    font-size: 70px;
+    width: 200px;
+    border-radius: 10%;
+    margin: 20px;
+    border: solid 2px black;
+    transition: 0.5s;
+    
+}
+
+.cards>div:hover{
+    width: 250px;
+    background-color: rgb(256,256,256);
+   
+}
+.cards>div:hover>a{
+    color: black;
+}
+
+.cards>div>a{
+    text-decoration: none;
+    color: white;
+}
