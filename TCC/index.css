@@ -1,0 +1,59 @@
+body{
+    display: flex;
+    flex-flow:column;
+    margin: 10px;
+    
+}
+.navbar{
+    position: fixed;
+    height: 20%;
+    border: red solid 1px;
+    width: calc(100% - 20px)
+    
+
+}
+
+.catalogo{
+    display: flex;
+    margin-top: 20%;
+    height: 80%;
+    border:solid blue 1px ;
+    flex-flow: column;
+    gap: 2px;
+   
+}
+
+.jogo{
+    text-decoration: none;
+    height: 10%;
+    display: flex;
+    flex-flow: row;
+    gap: 3px;
+    justify-content: space-around;
+}
+.textos{
+    justify-content: space-around;
+    display: flex;
+    flex-grow: 5;
+    flex-flow: column;
+    border: 2px solid green;
+
+}
+.titulo{
+    font-size: 20px;
+
+}
+.categoria{
+    font-size: 10px;
+}
+.preco{
+    display: flex;
+    flex-grow: 2;
+    border: solid brown 2px;
+}
+.foto{
+    display: flex;
+    flex-grow: 3;
+    aspect-ratio: 16/9;
+    width:20%;
+}
