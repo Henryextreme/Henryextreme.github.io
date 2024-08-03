@@ -27,13 +27,24 @@ body{
     font-size: 25px;
 }
 .foto{
-    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
     overflow: scroll;
     height: 100vh;
     scroll-snap-type: y mandatory;
+}
+
+section>video{
+    width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16/9;
+
 }
 section{
     font-size: 72px;
@@ -46,7 +57,10 @@ section:nth-child(1){
 background-color: lightblue;
 }
 section:nth-child(2){
-    background-color: hsl(125, 53%, 79%);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
     section:nth-child(3){
         background-color: hsl(235, 53%, 79%);
