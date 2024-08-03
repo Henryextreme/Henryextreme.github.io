@@ -1,18 +1,42 @@
+html{
+    font-size: 62.5%;
+}
 body{
     display: flex;
     flex-flow:column;
     margin: 10px;
-    
+    margin-top: 0;
 }
 .navbar{
+    display: flex;
     position: fixed;
     height: 20%;
     border: red solid 1px;
-    width: calc(100% - 20px)
-    
-
+    width: calc(100% - 20px);
+    background-color: black;
+    justify-content: center;
+    align-items: center;
 }
 
+.inicio{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    flex-grow: 5;
+}
+.categoriabar{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    flex-grow: 0.8;
+    font-size: 25px;
+}
+.navbar>input{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    flex-grow: 5;
+}
 .catalogo{
     display: flex;
     margin-top: 20%;
@@ -20,6 +44,7 @@ body{
     border:solid blue 1px ;
     flex-flow: column;
     gap: 2px;
+
    
 }
 
@@ -37,17 +62,21 @@ body{
     flex-grow: 5;
     flex-flow: column;
     border: 2px solid green;
-
+    
 }
 .titulo{
+    margin: 3px;
     font-size: 20px;
 
 }
 .categoria{
+    margin: 3px;
     font-size: 10px;
 }
 .preco{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-grow: 2;
     border: solid brown 2px;
 }
@@ -56,4 +85,13 @@ body{
     flex-grow: 3;
     aspect-ratio: 16/9;
     width:20%;
+}
+
+.seletorpag{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    gap: 30px;
+    margin-top: 10px;
+    border: solid red 1px;
 }
