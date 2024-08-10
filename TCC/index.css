@@ -42,15 +42,16 @@ body{
     margin-top: 20%;
     height: 80%;
     border:solid blue 1px ;
-    flex-flow: column;
-    gap: 2px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
 
    
 }
 
 .jogo{
     text-decoration: none;
-    height: 10%;
+    width: 45%;
     display: flex;
     flex-flow: row;
     gap: 3px;

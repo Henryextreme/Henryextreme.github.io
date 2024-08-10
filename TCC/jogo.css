@@ -6,11 +6,10 @@ body{
     display: flex;
     position: fixed;
     height: 10%;
-    border: red solid 1px;
-    width: calc(30% - 20px);
-    background-color: black;
+    width: calc(10% - 20px);
     justify-content: center;
     align-items: center;
+    border: solid red 1px;
 }
 
 .inicio{
@@ -19,17 +18,15 @@ body{
     text-decoration: none;
     flex-grow: 5;
 }
-.categoriabar{
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    flex-grow: 0.8;
-    font-size: 25px;
-}
+
 .foto{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2021/02/nyan-cat.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .container{
@@ -38,14 +35,7 @@ body{
     scroll-snap-type: y mandatory;
 }
 
-section>video{
-    width: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 16/9;
 
-}
 section{
     font-size: 72px;
     background-color: lightblue;
@@ -65,3 +55,4 @@ section:nth-child(2){
     section:nth-child(3){
         background-color: hsl(235, 53%, 79%);
         }
+
