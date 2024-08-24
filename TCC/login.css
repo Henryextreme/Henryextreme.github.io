@@ -1,0 +1,119 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100dvh - 10px);
+    margin: 5px;
+    background-color: hsl(0, 0%, 54%);
+    flex-flow: column;
+    gap: 5px   ;
+}
+
+.corpo{
+    display: flex;
+    padding: 30px 150px;
+    flex-direction: column;
+    border: 2px solid rgb(88, 87, 87);
+    gap: 5px;
+    border-radius: 5%;
+    background-color: rgb(209, 209, 209);
+    align-items: center;
+    
+}
+
+.texto{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.usuario{
+    display: flex;
+    margin: 5px;
+    gap: 5px;
+}
+.usuario>input{
+    outline: none;
+    transition: 0.5s;
+    border-radius: 5px;
+    border: 1px rgb(66, 66, 66) solid;
+}
+
+.usuario>input:focus{
+    scale: 1.25;
+}
+
+.usuario>input::placeholder{
+    font-size: 10px;
+}
+.senha{
+    display: flex;
+    gap: 5px;
+    margin: 5px;
+}
+.senha>input{
+    outline: none;
+    transition: 0.5s;
+    border-radius: 5px;
+    border: 1px rgb(66, 66, 66) solid;
+}
+
+.senha>input:focus{
+    scale:1.25;
+}
+
+.senha>input::placeholder{
+    font-size: 10px;
+}
+
+.entrar{
+    transition: 0.5s;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.entrar:hover{
+    scale: 1.25  ;
+}
+
+.criar{
+    font-size: 15px;
+    padding: 5px;
+    text-decoration: none;
+    color: hsl(212, 100%, 50%);
+    background-color: white;
+    border: solid rgb(139, 139, 139) 2px;
+    border-radius: 10px;
+    margin-top: 30px;
+    transition: 0.5s;
+}
+
+.criar:hover{
+    scale: 1.25;
+}
+
+.iconeusuario{
+    font-size: 20px;
+}
+
+.iconesenha{
+    font-size: 20px ;
+}
+
+.voltar{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    background-color: black;
+    padding: 2px;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.voltar:hover{
+    scale: 1.25;
+}
