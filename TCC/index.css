@@ -4,32 +4,33 @@ html{
 body{
     display: flex;
     flex-flow:column;
-    margin: 10px;
-    margin-top: 0;
+    margin: 0px;
     background-color: rgb(24, 24, 24);
 }
 .navbar{
     display: flex;
     position: fixed;
-    height: 20%;
+    height: 150px;
     width: calc(100% - 20px);
     background-color: rgb(24, 24, 24);
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 50px;
+    z-index: 2;
 }
 
 .inicio{
     display: flex;
     margin-left: 20px;
     text-decoration: none;  
-    font-size: 40px;
+    font-size: 60px;
     color: rgb(255, 255, 255);
     background-color: black;
     padding: 10px;
     border-radius: 10px;
     transition: 1s ;
     border: solid 2px black;
+    left: 50px;
 }
 
 .inicio:hover{
@@ -39,11 +40,13 @@ body{
 }
 
 .login{
-    flex-grow: 0.8;
+    display: flex;
     text-decoration: none;
     font-size: 25px;
     color: white;
     transition: 0.5s;
+    padding: 10px;
+
 }
 
 .login:hover{
@@ -55,10 +58,11 @@ body{
     display: flex;
     justify-content: center;
     text-decoration: none;
-    flex-grow: 0.8;
     font-size: 25px;
     color: white;
     transition: 0.5s;
+    padding: 10px;
+    right: 200px;
 }
 
 .categoriabar:hover{
@@ -70,11 +74,21 @@ body{
     display: flex;
     justify-content: center;
     text-decoration: none;
-    flex-grow: 5;
+    width: 1000px;
+    height: 30px;
+    font-size: 25px;
+    outline: none;
+    transition: 0.5s;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.navbar>input:focus{
+    height: 40px;
 }
 .catalogo{
+    margin-top: 180px;
     display: flex;
-    margin-top: 20%;
     height: 80%;
     border:solid rgb(0, 0, 0) 1px ;
     background-color: rgb(12, 12, 12);
@@ -94,25 +108,31 @@ body{
     justify-content: space-around;
     background-color: black;
     border: rgb(170, 170, 170) 2px solid;
-    border-radius: 2px;
-    
+    border-radius: 5px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.jogo:hover{
+    scale: 1.1 ;
+
 }
 .textos{
     justify-content: space-around;
     display: flex;
     flex-grow: 5;
     flex-flow: column;
-    
     color: rgb(255, 255, 255);
+    margin-left: 5px;
 }
 .titulo{
     margin: 3px;
-    font-size: 20px;
+    font-size: 40px;
 
 }
 .categoria{
     margin: 3px;
-    font-size: 10px;
+    font-size: 15px;
 }
 .preco{
     display: flex;
@@ -121,6 +141,7 @@ body{
     flex-grow: 2;
     margin-right: 3px;
     color: rgb(255, 255, 255);
+    font-size: 20px;
 }
 .foto{
     display: flex;
@@ -140,11 +161,61 @@ body{
 
 
 @media (max-width:500px){
-
-    .catalogo{
-        flex-flow: column;
-
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 200px;
+        width: 100%;
+        margin-top: 0px;
+        gap: 10px;
     }
     
+    .inicio{
+        font-size: 30px;
+        margin: 0;
+        order: 1;
+    }
+    .navbar>input{
+        order: 2;
+        width: 300px;
+    }
+    .login{
+        order: 3;
+    }
+    .categoriabar{
+        display: none;
+    }
+    .catalogo{
+        flex-flow: column;
+        margin-top: 210px;
+        margin-left: 10px;
+        margin-right: 0px;
+    }
 
+    .jogo{
+        width:95%;
+        height: 100px;
+    }
+    
+    .foto{
+        height: 100px;
+        width: 177px;
+    
+    }
+
+    .textos{
+        width: 200px;
+    }
+    .titulo{
+        font-size: 25px;
+    }
+    .categoria{
+        font-size: 12px;
+    }
+    .preco{
+        width: 50px;
+        font-size: 20px;    
+    }
 }

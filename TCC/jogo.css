@@ -17,16 +17,28 @@ body{
     display: flex;
     justify-content: center;
     text-decoration: none;
-    flex-grow: 5;
+    transition: 0.5s;
+    position: fixed;
+    left: 30px;
+    top: 30px;
 }
+
 .inicio>i{
     color: white;
     background-color: rgb(0, 0, 0);
     padding: 10px;
-    border-radius: 100px;
-    font-size: 25px;
+    border-radius: 10px;
+    font-size: 60px;
     margin-left: 20px;
+    transition: 1s;
 }
+
+.inicio>i:hover{
+    scale: 1.25;
+    border-radius: 100px;
+    border: 2px solid white;
+}
+
 .foto{
 
     display: flex;
