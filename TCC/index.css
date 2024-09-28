@@ -11,7 +11,7 @@ body{
     display: flex;
     position: fixed;
     height: 150px;
-    width: calc(100% - 20px);
+    width:100%;
     background-color: rgb(24, 24, 24);
     justify-content: center;
     align-items: center;
@@ -31,12 +31,57 @@ body{
     transition: 1s ;
     border: solid 2px black;
     left: 50px;
+    animation: entrar 2s normal ease;
+}
+@keyframes entra{
+    0%{
+        transform: scale(1);
+        transform: translateY(-500px);
+
+    }
+    50%{
+        transform: scale(3);
+    }
+    100%{
+        transform: rotate(720deg);
+        transform: scale(1);
+        
+    }
 }
 
 .inicio:hover{
     scale: 1.25;
     border-radius: 100px;
     border: 2px solid white;
+    animation-name: clicar;
+    animation-duration: 4s;
+}
+
+@keyframes clicar{
+    0%{
+    
+    }
+
+    20%{
+
+        transform: translate(calc((100dvh - 20px) / 10), calc((50dvh - 20px)/10));
+        scale: 10;
+        
+    
+    }
+
+   
+    50%{
+        transform: translate(calc((100dvh - 20px) / 10), calc((50dvh - 20px)/10));
+        scale: 10;
+        transform-origin: center;
+        rotate: 0deg;
+      
+    }
+    60%{
+        transform-origin: center;
+        rotate: 360deg;
+    }
 }
 
 .login{
@@ -160,7 +205,7 @@ body{
 }
 
 
-@media (max-width:500px){
+@media (max-width:700px){
     .navbar{
         display: flex;
         justify-content: center;
@@ -219,3 +264,4 @@ body{
         font-size: 20px;    
     }
 }
+
