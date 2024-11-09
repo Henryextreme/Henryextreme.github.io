@@ -43,31 +43,6 @@ body{
 }
 
 
-/*@keyframes clicar{
-    0%{
-    
-    }
-
-    20%{
-
-        transform: translate(calc((100dvh - 20px) / 10), calc((50dvh - 20px)/10));
-        scale: 10;
-        
-    
-    }
-
-   
-    50%{
-        transform: translate(calc((100dvh - 20px) / 10), calc((50dvh - 20px)/10));
-        scale: 10;
-        rotate: 0;
-      
-    }
-    60%{
-        rotate: 360deg;
-      
-    }*/
-
 
 .login{
     display: flex;

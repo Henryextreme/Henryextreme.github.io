@@ -71,6 +71,7 @@ body{
 }
 
 .entrar{
+    margin-top: 10px;
     transition: 0.5s;
     border-radius: 10px;
     border: 1px solid gray;
@@ -116,4 +117,32 @@ body{
 
 .voltar:hover{
     scale: 1.25;
+}
+
+.data{
+    display: flex;
+    gap: 5px;
+    margin: 5px;
+}
+
+.data>input{
+    width:171px;
+    height: 21px;
+    outline: none;
+    transition: 0.5s;
+    border-radius: 5px;
+    border: 1px rgb(66, 66, 66) solid;
+}
+
+.data>input:focus{
+    scale:1.25;
+}
+
+.data>input::placeholder{
+    font-size: 10px;
+}
+
+.fa fa-calendar{
+    height: 20px;
+    width: 12.86;
 }

@@ -14,12 +14,26 @@
     </nav>
 
     <div class="container">
-    <section class="foto"><img src="https://warthunder.com/i/opengraph-wt.jpg" alt=""></section>        
+    <section class="foto"><img src="https://warthunder.com/i/opengraph-wt.jpg" alt="">
+        
+        <button class="botao" onclick="iniciarDownload()"><i class="fa fa-download" aria-hidden="true"></i>
+            Faça o download aqui!</button>
+
+            <script>
+                function iniciarDownload() {
+                    const link = document.createElement('a');
+                    link.href = 'Downloads/warthunder.png'; // caminho do arquivo
+                    link.download = 'War Thunder.png';           // nome do arquivo ao baixar
+                    link.click();
+                }
+            </script>
+
+    </section> 
+
     <section>
-        <iframe class="ytplayer" width="1920" height="980" src="https://www.youtube.com/embed/IRbeW9vh6j4?list=PLSntCogb-PMp_HlQ6dUtASZlXgOxckVOa" title="&#39;Apex Predators&#39; War Thunder Update Teaser (feat. 2WEI)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+        <iframe class="ytplayer" width="1920" height="900" src="https://www.youtube.com/embed/IRbeW9vh6j4?list=PLSntCogb-PMp_HlQ6dUtASZlXgOxckVOa" title="&#39;Apex Predators&#39; War Thunder Update Teaser (feat. 2WEI)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
         
     </section>
-    <section><button class="btn"><i class="fa fa-download"></i> Download</button></section>
     </div>
     
 

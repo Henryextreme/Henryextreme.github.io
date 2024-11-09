@@ -40,7 +40,6 @@ body{
 }
 
 .foto{
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,17 +49,30 @@ body{
     background-position: center;
     filter: blur(10%);
     filter: grayscale(60%);
-    
+    flex-direction: column;
 }
 
 .foto>img{
-    width: 80%;
+    width: 70%;
+
 }
 .container{
     overflow: scroll;
     height: 100vh;
     scroll-snap-type: y mandatory;
 }
+
+.botao{
+    margin-top: 15px;
+    background-color: rgb(255, 0, 0);
+    padding: 20px;
+    font-size: 40px;
+    color: white;
+    border-radius: 8px;
+    border-style: none;
+    cursor: pointer;
+}
+
 
 
 section{
@@ -79,12 +91,10 @@ section:nth-child(2){
     justify-content: center;
     align-items: center;
     }
-    section:nth-child(3){
-        background-color: hsl(235, 53%, 79%);
-        }
+
 
 .ytplayer{
 aspect-ratio: 16/9;
-height: fit-content;
+
 }
 
