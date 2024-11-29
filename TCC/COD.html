@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COD BO6</title>
+    <link rel="stylesheet" href="COD.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1938090/8eaf32220060344996cbf11f697a4f4be943e5f3.jpg">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="inicio"><i class="fa fa-home" aria-hidden="true"></i>
+        </a>
+    </nav>
+
+    <div class="container">
+    <section class="foto"><img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops6/meta/BO6_LP-meta_image.jpg" alt="">
+        
+        <button class="botao" onclick="iniciarDownload()"><i class="fa fa-download" aria-hidden="true"></i>
+            Faça o download aqui!</button>
+
+            <script>
+                function iniciarDownload() {
+                    const link = document.createElement('a');
+                    link.href = 'Downloads/COD.png'; // caminho do arquivo
+                    link.download = 'COD.png';           // nome do arquivo ao baixar
+                    link.click();
+                }
+            </script>
+
+    </section> 
+
+    <section>
+        <iframe class="ytplayer" width="1920" height="790" src="https://www.youtube.com/embed/oyZY_BiTmd8" title="Black Ops 6 - Gameplay Reveal Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    </div>
+    
+
+</body>
+</html>
+
+
+
+

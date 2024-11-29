@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBSZ</title>
+    <link rel="stylesheet" href="DBSZ.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1790600/72a0587452b190e38aee6de62ae9629a7e8cc8ba.jpg">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="inicio"><i class="fa fa-home" aria-hidden="true"></i>
+        </a>
+    </nav>
+
+    <div class="container">
+    <section class="foto"><img src="https://media.graphassets.com/hMpRcNy0RhyN3eCinBMb" alt="">
+        
+        <button class="botao" onclick="iniciarDownload()"><i class="fa fa-download" aria-hidden="true"></i>
+            Faça o download aqui!</button>
+
+            <script>
+                function iniciarDownload() {
+                    const link = document.createElement('a');
+                    link.href = 'Downloads/DBSZ.avif'; // caminho do arquivo
+                    link.download = 'DBSZ.avif';           // nome do arquivo ao baixar
+                    link.click();
+                }
+            </script>
+
+    </section> 
+
+    <section>
+        <iframe class="ytplayer" width="1920" height="790" src="https://www.youtube.com/embed/j9mTwNMJydM" title="DRAGON BALL: Sparking! Zero - Opening Movie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    </div>
+    
+
+</body>
+</html>
+
+
+
+

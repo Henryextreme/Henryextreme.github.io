@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War Thunder</title>
+    <link rel="stylesheet" href="WT.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/236390/c69fbafb6e9891314cc5df0fe6a659612c289bf9.jpg" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="inicio"><i class="fa fa-home" aria-hidden="true"></i>
+        </a>
+    </nav>
+
+    <div class="container">
+    <section class="foto"><img src="https://warthunder.com/i/opengraph-wt.jpg" alt="">
+        
+        <button class="botao" onclick="iniciarDownload()"><i class="fa fa-download" aria-hidden="true"></i>
+            Faça o download aqui!</button>
+
+            <script>
+                function iniciarDownload() {
+                    const link = document.createElement('a');
+                    link.href = 'Downloads/warthunder.png'; // caminho do arquivo
+                    link.download = 'War Thunder.png';           // nome do arquivo ao baixar
+                    link.click();
+                }
+            </script>
+
+    </section> 
+
+    <section>
+        <iframe class="ytplayer" width="1920" height="790" src="https://www.youtube.com/embed/IRbeW9vh6j4?list=PLSntCogb-PMp_HlQ6dUtASZlXgOxckVOa" title="&#39;Apex Predators&#39; War Thunder Update Teaser (feat. 2WEI)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+        
+    </section>
+    </div>
+    
+
+</body>
+</html>
+
+
+
+

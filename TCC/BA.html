@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broken Arrow</title>
+    <link rel="stylesheet" href="BA.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1604270/dbb8530b4f42c3fbff6c5343a1ececf55ca6030b.jpg">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="inicio"><i class="fa fa-home" aria-hidden="true"></i>
+        </a>
+    </nav>
+
+    <div class="container">
+    <section class="foto"><img src="https://www.nim.ru/i/800_450/games/4068/broken-arrow-1598-4068.jpg" alt="">
+        
+        <button class="botao" onclick="iniciarDownload()"><i class="fa fa-download" aria-hidden="true"></i>
+            Faça o download aqui!</button>
+
+            <script>
+                function iniciarDownload() {
+                    const link = document.createElement('a');
+                    link.href = 'Downloads/BA.jpg'; // caminho do arquivo
+                    link.download = 'BA.jpg';           // nome do arquivo ao baixar
+                    link.click();
+                }
+            </script>
+
+    </section> 
+
+    <section>
+        <iframe class="ytplayer" width="1920" height="790" src="https://www.youtube.com/embed/7eU2B9XzXCc" title="Broken Arrow - Beta trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    </div>
+    
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BF2042</title>
+    <link rel="stylesheet" href="BF2042.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1517290/dc805cd05c36a1b26f4eb57b64301e6708e20776.jpg">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="inicio"><i class="fa fa-home" aria-hidden="true"></i>
+        </a>
+    </nav>
+
+    <div class="container">
+    <section class="foto"><img src="https://image.api.playstation.com/vulcan/ap/rnd/202305/2515/2e3e2010ce0c8adeae9c63098361095f122547c8af967101.jpg" alt="">
+        
+        <button class="botao" onclick="iniciarDownload()"><i class="fa fa-download" aria-hidden="true"></i>
+            Faça o download aqui!</button>
+
+            <script>
+                function iniciarDownload() {
+                    const link = document.createElement('a');
+                    link.href = 'Downloads/BF2042.avif'; // caminho do arquivo
+                    link.download = 'BF2042.avif';           // nome do arquivo ao baixar
+                    link.click();
+                }
+            </script>
+
+    </section> 
+
+    <section>
+        <iframe class="ytplayer" width="1920" height="790" src="https://www.youtube.com/embed/ASzOzrB-a9E" title="Trailer de anúncio oficial do Battlefield 2042 (com 2WEI)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+    </section>
+    </div>
+    
+
+</body>
+</html>
+
+
+
+

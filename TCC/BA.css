@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    height: 10%;
+    width: calc(10% - 20px);
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+}
+
+.inicio{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.5s;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+}
+
+.inicio>i{
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 60px;
+    margin-left: 20px;
+    transition: 1s;
+}
+
+.inicio>i:hover{
+    scale: 1.25;
+    border-radius: 100px;
+    border: 2px solid white;
+}
+
+.foto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1604270/extras/1_new.gif?t=1732889569');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}
+
+.foto>img{
+    width: 70%;
+
+}
+.container{
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+}
+
+.botao{
+    margin-top: 15px;
+    background-color: rgb(255, 0, 0);
+    padding: 20px;
+    font-size: 40px;
+    color: white;
+    border-radius: 8px;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.botao:hover{
+  scale: 1.15;
+  background-color: rgb(149, 0, 0);
+  border-radius:50px ;
+}
+
+
+
+section{
+    font-size: 72px;
+    background-color: lightblue;
+    height:100vh;
+    scroll-snap-align: start;
+}
+
+section:nth-child(1){
+background-color: lightblue;
+}
+section:nth-child(2){
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+.ytplayer{
+aspect-ratio: 16/9;
+
+}
+
+.container {
+    overflow: auto; /* Permite rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE e Edge */
+}
+
+.container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Edge */
+}
