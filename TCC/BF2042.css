@@ -70,6 +70,7 @@ body{
     border-style: none;
     cursor: pointer;
     transition: 0.5s;
+    margin-bottom: 10px;
 }
 
 .botao:hover{
@@ -96,10 +97,10 @@ section:nth-child(2){
     }
 
 
-.ytplayer{
-aspect-ratio: 16/9;
-
-}
+    .ytplayer{
+        height: 100vh;
+    
+        }
 
 .container {
     overflow: auto; /* Permite rolagem */
