@@ -172,9 +172,11 @@ body{
         align-items: center;
         flex-direction: column;
         height: 200px;
-        width: 100%;
+        width: 375px;
         margin-top: 0px;
         gap: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     
     .inicio{
@@ -200,28 +202,30 @@ body{
     }
 
     .jogo{
-        width:95%;
+        width:37px;
         height: 100px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     
     .foto{
         height: 100px;
-        width: 177px;
+        width: 160px;
     
     }
 
     .textos{
-        width: 200px;
+        width: 150px;
     }
     .titulo{
-        font-size: 25px;
+        font-size: 15px;
     }
     .categoria{
-        font-size: 12px;
+        font-size: 9px;
     }
     .preco{
-        width: 50px;
-        font-size: 20px;    
+        width: 10px;
+        font-size: 10px;    
     }
 }
 
