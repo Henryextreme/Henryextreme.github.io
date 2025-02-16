@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débora</title>
+    <link rel="stylesheet" href="contas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="icone">
+        <a href="../menu/menu.html">
+            <img src="https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg?w=940" alt="">
+        </a>
+    </div>
+    <div class="conta">
+        <img class="foto" src="../Debora icon.png" alt="">
+        Meu amorzinho
+    </div>
+    <div class="display">
+        <input class="input" id="senha" readonly placeholder="Digite a senha"><br> <br>
+        <div class="acoes">
+        </div>
+    </div>
+    <div class="teclado">
+        <button onclick="digitar(1)">1</button>
+        <button onclick="digitar(2)">2</button>
+        <button onclick="digitar(3)">3</button>
+        <button onclick="digitar(4)">4</button>
+        <button onclick="digitar(5)">5</button>
+        <button onclick="digitar(6)">6</button>
+        <button onclick="digitar(7)">7</button>
+        <button onclick="digitar(8)">8</button>
+        <button onclick="digitar(9)">9</button>
+        <button class="apagar" onclick="apagar()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+        <button onclick="digitar(0)">0</button>
+        <button class="enviar" id="botao"><i class="fa fa-reply" aria-hidden="true"></i></button>
+    </div>
+
+    <div id="certo" class="certo">✔</div>
+
+    <div id="errado" class="errado">X</div>
+
+    <div class="barra"></div>
+
+    <div class="barraX"></div>
+
+    <script src="debora.js"></script>
+</body>
+</html>

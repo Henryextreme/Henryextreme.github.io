@@ -1,0 +1,281 @@
+body{
+    background-color: rgb(16, 16, 16);
+}
+
+.input{
+    border: 0px black solid;
+    height: 50px;
+    width: 370px;
+    border-radius: 20px;
+    font-size: 30px;
+    color: black;
+    font-family: arial,sans-serif;
+    text-align: center;
+}
+
+input::placeholder{
+    display: flex;
+    color: black;
+    font-size: 30px;
+    font-family: arial, sans-serif;
+
+}
+
+h1{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-top: 40px;
+   
+}
+
+.teclado{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px;
+}
+
+.teclado>button{
+    display: flex;
+    width: 100px;
+    height: 100px;  
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border-radius: 50px;
+    border: 0 solid;
+    background-color: rgb(72, 72, 72);
+    color: white;
+    font-family: arial,sans-serif;
+    font-weight: bold;
+}
+.teclado>button:active{
+    background-color:rgb(125, 125, 125) ;
+}
+.foto{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(0, 120, 34);
+}
+
+.conta{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: arial,sans-serif;
+    padding-top: 0px;
+    font-size: 30px;
+    gap: 15px;
+}
+
+img{
+    display: flex;
+    width: 200px;
+    
+}
+.icone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+button.apagar{
+    background-color:hsl( 2, 98%, 53%);
+}
+
+button.enviar{
+    background-color:hsl( 204, 98%, 53%);
+}
+
+button.apagar:active{
+    background-color:hsl(2, 70%, 62%);
+}
+
+button.enviar:active{
+    background-color:hsl(204, 89%, 72%);
+}
+
+
+
+.errado::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.barra{ 
+    position: absolute;
+    border: 0px black solid;
+    height: 50px;
+    width: 370px;
+    border-radius: 20px;
+    color: white;
+    background-color: white;
+    top: 345px;
+    left:30px;
+    opacity: 0;
+    z-index: 3;
+    transform-origin: center;
+}
+.barra.ativar {
+    animation: certo 2s forwards;
+}
+
+
+
+@keyframes certo {
+    0%{
+        width: 370px;
+        opacity: 1;
+        background-color: green;
+        transform: translateX(0) scaleX(1);
+    }
+
+    50%{
+        background-color: green;
+        opacity: 1;
+        width: 50px;
+        transform: translateX(160px) scaleX(1);
+    }   
+
+    100%{
+        background-color: green;
+        opacity: 1;
+        width: 50px;
+        transform: translateX(160px) scaleX(1);
+    }
+}
+
+@keyframes check  {
+    0%{
+       
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.certo.ativar{
+    animation: check 2s forwards;
+}
+.certo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 350px;
+    left:195px;
+    background-color: hwb(120 0% 50% / 0);
+    transform-origin: center;
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    z-index: 4;
+    border-radius: 30px;
+}
+
+.errado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 350px;
+    left:195px;
+    background-color: hwb(120 0% 50% / 0);
+    transform-origin: center;
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    z-index: 4;
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.errado.ativar{
+    animation: errado 2s forwards;
+}
+
+@keyframes errado  {
+    0%{
+       
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+.barraX{ 
+    position: absolute;
+    border: 0px black solid;
+    height: 50px;
+    width: 370px;
+    border-radius: 20px;
+    color: white;
+    background-color: white;
+    top: 345px;
+    left:30px;
+    opacity: 0;
+    z-index: 3;
+    transform-origin: center;
+}
+.barraX.ativar {
+    animation: barraX 2s forwards;
+}
+
+
+
+@keyframes barraX {
+    0%{
+        width: 370px;
+        opacity: 1;
+        background-color: red;
+        transform: translateX(0) scaleX(1);
+    }
+
+    50%{
+        background-color: red;
+        opacity: 1;
+        width: 50px;
+        transform: translateX(160px) scaleX(1);
+    }   
+
+    100%{
+        background-color: red;
+        opacity: 1;
+        width: 50px;
+        transform: translateX(160px) scaleX(1);
+    }
+}
