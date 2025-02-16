@@ -7,19 +7,19 @@ body{
 }
 
 .icon{
-    width: 40dvh;
+    width: 300px;
 }
 .texto{
     display: flex;
     color:rgb(214, 214, 214);
     align-items: center;
-    padding: 100px;
-    font-size: 100px;
+    padding: 10px;
+    font-size: 30px;
 }
 
 .contas{
     display: flex;
-    gap: 100px;
+    gap: 10px;
     flex-flow: column;
 }
 
@@ -29,11 +29,11 @@ body{
     align-items: center;
     text-decoration: none;
     color: rgb(214, 214, 214);
-    font-size:100px;
+    font-size:20px;
 }
 
 .deboraicon{
-    height: 20dvh;
+    height: 200px;
 
 }
 
@@ -43,11 +43,11 @@ body{
     align-items: center;
     text-decoration: none;
     color: rgb(214, 214, 214);
-    font-size: 100px;
+    font-size: 20px;
 }
 
 .henryicon{
-    height: 20dvh;
+    height: 200px;
     background-color: rgb(0, 120, 34);
     
 }
@@ -55,7 +55,7 @@ body{
 .msg{
     color:rgb(214, 214, 214) ;
     position: absolute;
-    bottom: 50px;
-    font-size: 50px;
+    bottom: 5px;
+    font-size: 15px;
 
 }
