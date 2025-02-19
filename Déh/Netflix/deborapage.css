@@ -1,0 +1,170 @@
+body{
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+.inicio{
+    margin-top: 200px;
+}
+
+.barra{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(16, 16, 16,);
+    
+}
+
+a.icon{
+    background-color: rgb(16, 16, 16);
+}
+
+.icon>img{
+    width: 300px;
+    border: 0;
+}
+
+.catalogo{
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+.catalogo>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: none;
+    border: 0;
+}
+
+h1{
+    font-family:sans-serif;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.catalogo>button>img{
+    height: 250px;
+    border: 0;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.menu{
+    display: flex;
+    position: fixed;
+    background-color: rgb(16, 16, 16);
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    justify-content: space-around;
+    
+}
+
+.menu>a{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(16, 16, 16);
+    border: 0;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.margem{
+    margin-bottom: 125px;
+    color: rgb(0, 0, 0, 0);
+}
+
+.card{
+    display: none;
+    position: fixed;
+    top: 10dvh;
+    left: 24px;
+    height: 78dvh;
+    width: 380px;
+    background-color: black;
+    overflow: auto;
+}
+
+.sair{
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background-color: rgb(56, 56, 56);
+    border: none;
+    border-radius: 50%;
+    color:white ;
+    width: 20px;
+    height: 20px;
+}
+
+.capa{
+    width: 100%;
+}
+
+.assistir{
+    position: absolute;
+    bottom: 200px;
+    left: 5%;
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.minhalista{
+    position: absolute;
+    bottom: 90px;
+    left: 20%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: rgb(198, 198, 198) 2px solid;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+
+.like{
+    position: absolute;
+    bottom: 90px;
+    right: 20%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: rgb(198, 198, 198) 2px solid;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+
+.texto{
+    margin-top: 130px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    color: white;
+    flex-flow: column;
+    gap: 20px;
+}
+.categoria{
+    color: rgb(183, 183, 183);
+}
