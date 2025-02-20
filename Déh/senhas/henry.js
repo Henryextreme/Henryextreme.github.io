@@ -37,7 +37,7 @@ document.getElementById('botao').onclick = function(){
 
     setTimeout(() => {
         location.reload()
-    }, 4000);
+    }, 2000);
 
    }
 }
