@@ -5,7 +5,7 @@ largura = 5
 altura = 5
 numBomba = 9
 qtBandeiras = 0
-qtBombas = 2
+qtBombas = 5
 tabuleiro = []
 tabStatus = []
 tabBandeiras = []
@@ -47,30 +47,30 @@ def ContaBombas (tabuleiro,numBomba):
                 cont = 0
                 ##check vertical
                 if y > 0 :
-                    if tabuleiro[y-1][x] == numBomba: cont +=1
+                    if tabuleiro[x][y-1] == numBomba: cont +=1
                 if y < altura-1:
-                    if tabuleiro[y+1][x] == numBomba: cont +=1
+                    if tabuleiro[x][y+1] == numBomba: cont +=1
 
                 ##check horizontal
                 if x < largura-1:
-                    if tabuleiro[y][x+1] == numBomba: cont +=1
+                    if tabuleiro[x+1][y] == numBomba: cont +=1
                 if x > 0 :
-                    if tabuleiro[y][x-1] == numBomba: cont +=1
-                tabuleiro [y][x] = cont
+                    if tabuleiro[x-1][y] == numBomba: cont +=1
+                tabuleiro [x][y] = cont
 
                 ##check diagonal superior
                 if x < 0 and y > 0:
-                    if tabuleiro[y+1][x-1] == numBomba: cont +=1
+                    if tabuleiro[x-1][y+1] == numBomba: cont +=1
                 if x > largura and y > 0:
-                    if tabuleiro[y+1][x+1] == numBomba: cont +=1
-                tabuleiro [y][x] = cont
+                    if tabuleiro[x+1][y+1] == numBomba: cont +=1
+                tabuleiro [x][y] = cont
 
                 ##check diagonal inferior
                 if x < 0 and y < 0:
-                    if tabuleiro[y-1][x-1] == numBomba: cont +=1
+                    if tabuleiro[x-1][y-1] == numBomba: cont +=1
                 if x > largura and y < 0:
-                    if tabuleiro[y-1][x+1] == numBomba: cont +=1
-                tabuleiro [y][x] = cont
+                    if tabuleiro[x+1][y-1] == numBomba: cont +=1
+                tabuleiro [x][y] = cont
 
 
 
