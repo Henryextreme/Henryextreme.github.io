@@ -56,20 +56,23 @@ def ContaBombas (tabuleiro,numBomba):
                     if tabuleiro[x+1][y] == numBomba: cont +=1
                 if x > 0 :
                     if tabuleiro[x-1][y] == numBomba: cont +=1
-                tabuleiro [x][y] = cont
-
+                
                 ##check diagonal superior
-                if x < 0 and y > 0:
-                    if tabuleiro[x-1][y+1] == numBomba: cont +=1
-                if x > largura and y > 0:
-                    if tabuleiro[x+1][y+1] == numBomba: cont +=1
-                tabuleiro [x][y] = cont
-
-                ##check diagonal inferior
-                if x < 0 and y < 0:
+                ##esquerda superior
+                if y > 0 and x > 0: 
                     if tabuleiro[x-1][y-1] == numBomba: cont +=1
-                if x > largura and y < 0:
+                ##direita superior
+                if y > 0 and x < largura-1:
                     if tabuleiro[x+1][y-1] == numBomba: cont +=1
+                
+                ##check diagonal inferior
+                ##esquerda inferior
+                if y < altura - 1 and x > 0:
+                    if tabuleiro[x-1][y+1] == numBomba: cont +=1
+                ##direita inferior
+                if y < altura - 1 and x < largura - 1:
+                    if tabuleiro[x+1][y+1] == numBomba: cont +=1
+
                 tabuleiro [x][y] = cont
 
 
