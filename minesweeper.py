@@ -73,7 +73,7 @@ def ContaBombas (tabuleiro,numBomba):
                 tabuleiro [x][y] = cont
 
 
-
+#teste
 
 
 CriaTabuleiro(tabuleiro,altura,largura, valorPadrao)
