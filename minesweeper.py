@@ -1,26 +1,30 @@
 import random
 from itertools import count
 
-largura = 5
-altura = 5
+largura = 10
+altura = 10
 numBomba = 9
 qtBandeiras = 0
-qtBombas = 5
+qtBombas = 20
 tabuleiro = []
 tabStatus = []
+larg = []
 tabBandeiras = []
 valorPadrao = 0
 
 def CriaTabuleiro(tabuleiro, altura, largura, valorPadrao):
-    for x in range (0, largura):
+    for x in range (0,largura):
         linha = []
         for y in range (0,altura):
             linha.append(valorPadrao)
         tabuleiro.append(linha)
 
-def MostraTabuleiro(tabuleiro):
+def MostraTabuleiro(tabuleiro,largura,larg):
+    for y in range(0,largura):
+        larg.append(y)
+    print("  ",', '.join(map(str, larg)))
     for x in range (0, len(tabuleiro)):
-        print(tabuleiro[x])
+        print(x,tabuleiro[x])
 
 
 ###
@@ -82,6 +86,6 @@ def ContaBombas (tabuleiro,numBomba):
 CriaTabuleiro(tabuleiro,altura,largura, valorPadrao)
 CriarBombas(tabuleiro,qtBombas,numBomba)
 ContaBombas(tabuleiro,numBomba)
-MostraTabuleiro(tabuleiro)
+MostraTabuleiro(tabuleiro,largura,larg)
 
 
