@@ -1,11 +1,11 @@
 import random
 from itertools import count
 
-largura = 10
-altura = 10
+largura = 5
+altura = 5
 numBomba = 9
 qtBandeiras = 0
-qtBombas = 20
+qtBombas = 5
 tabuleiro = []
 tabStatus = []
 larg = []
