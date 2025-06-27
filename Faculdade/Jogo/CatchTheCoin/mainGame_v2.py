@@ -28,11 +28,9 @@ MOEDA_TAMANHO = (20, 20)
 background_img = pygame.image.load(r'Assets/Ocean_8/6.png').convert()
 
 # barco
-barco_sprite_img = pygame.image.load(r'Meus assets/Barco/Barco.png').convert_alpha()
+barco_sprite_img = pygame.image.load(r'Assets/PNG/boat01.png').convert_alpha()
 # Opcionalmente, ajuste o tamanho do sprite
-barco_sprite_img = pygame.transform.smoothscale(barco_sprite_img, (90, 90))
-
-
+barco_sprite_img = pygame.transform.smoothscale(barco_sprite_img, (80, 40))
 
 #mar
 sea_sprite = pygame.image.load(r'Assets/PNG/mar001.png').convert()
@@ -111,25 +109,25 @@ class Barco(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = barco_sprite_img  # sprite carregado
-        self.rect = self.image.get_rect(midbottom=(WIDTH//2, HEIGHT - 80))
+        self.rect = self.image.get_rect(midbottom=(WIDTH//2, HEIGHT - 100))
         self.speed = 8
         self.carga = 0
         self.max_carga = 100
 
-    def update(self, keys_pressed,barco_sprite_img):
+    def update(self, keys_pressed):
         if keys_pressed[pygame.K_LEFT]:
             self.rect.x -= self.speed
         if keys_pressed[pygame.K_RIGHT]:
             self.rect.x += self.speed
-            #barco_sprite_img = pygame.transform.flip(barco_sprite_img, True, False)
         if self.rect.left < 0:
             self.rect.left = 0
         if self.rect.right > WIDTH:
             self.rect.right = WIDTH
 
     def voltar_ao_porto(self):
-        self.rect.midbottom = (WIDTH // 2, HEIGHT - 80)
+        self.rect.midbottom = (WIDTH // 2, HEIGHT - 100)
         self.carga = 0
+
 
 #
 # Variáveis de controle
@@ -193,14 +191,7 @@ while running:
         continue  # pula o restante do loop enquanto descarrega
 
     # Atualiza movimento do barco
-    barco.update(keys, barco_sprite_img)
-
-    if keys[pygame.K_LEFT]:
-        barco_sprite_img = pygame.transform.flip(barco, True, False)
-    if keys[pygame.K_RIGHT]:
-        barco_sprite_img = pygame.transform.flip(barco, True, False)
-
-
+    barco.update(keys)
 
     # Atualiza as moedas
     moedas.update()
