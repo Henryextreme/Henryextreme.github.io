@@ -20,10 +20,9 @@ som_beep = pygame.mixer.Sound(r'CatchTheCoin\Assets/Audio/beep.mp3')
 #
 WIDTH, HEIGHT = 800, 800
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Navio Cata Moedas!!!")
 clock = pygame.time.Clock()
 FONT = pygame.font.SysFont(None, 36)
-MOEDA_TAMANHO = (20, 20)
+CAMINHAO_TAMANHO = (100, 100)
 
 # Carregar a imagem do fundo (altere o caminho para sua imagem real)
 background_img = pygame.image.load(r'CatchTheCoin\Assets2\Road\Road_00.png')
@@ -35,75 +34,35 @@ background_img = pygame.transform.rotate(background_img, 90)
 # barco
 barco_sprite_img = pygame.image.load(r'CatchTheCoin/Assets2/Fusca.png').convert_alpha()
 # Opcionalmente, ajuste o tamanho do sprite
-barco_sprite_img = pygame.transform.smoothscale(barco_sprite_img, (54*1.5, 85*1.5))
+barco_sprite_img = pygame.transform.smoothscale(barco_sprite_img, (54*1.25, 85*1.25))
 
 
 #
 # Função para configurar a dificuldade
 #
-def configurar_dificuldade(nivel):
-    if nivel == 1:
-        qtd_moedas = 15
-        v_min = 2
-        v_max = 3
-    elif nivel == 2:
-        qtd_moedas = 25
-        v_min = 3
-        v_max = 4
-    elif nivel == 3:
-        qtd_moedas = 35
-        v_min = 4
-        v_max = 6
-    else:
-        qtd_moedas = 15
-        v_min = 2
-        v_max = 3
-    return qtd_moedas, v_min, v_max
-
-def load_animation_frames(prefix, total_frames=10, tamanho=MOEDA_TAMANHO):
-    frames = []
-    for i in range(1, total_frames + 1):
-        filename = f'{prefix}_{i}.png'
-        image = pygame.image.load(filename).convert_alpha()
-        image = pygame.transform.smoothscale(image, tamanho)
-        frames.append(image)
-    return frames
-
-# Carregar sprites das moedas (alterar caminhos conforme seus arquivos)
-Caminhao = load_animation_frames(r"CatchTheCoin\Assets2\Toco-ou-semi-pesado.jpg")
+qtd_caminhao = 2
+if clock > 20:
+    qtd_caminhao = 10
 
 
-
-# Classe das moedas animadas
-class Moeda(pygame.sprite.Sprite):
-    def __init__(self, x, y, tipo):
-        super().__init__()
-        self.tipo = tipo
-        self.frames = {
-            'ouro': ouro_frames,
-            'prata': prata_frames,
-            'bronze': bronze_frames
-        }[tipo]
-        self.current_frame = 0
-        self.image = self.frames[self.current_frame]
-        self.rect = self.image.get_rect(topleft=(x, y))
-        self.speed = random.uniform(2, 5)
-        self.animation_speed = 0.2
-        self.frame_counter = 0
-
+# Classe das Caminhao animadas
+class Caminhao(pygame.sprite.Sprite):
+    def __init__(self, x, y, tipo, v_min, v_max):
+            super().__init__()
+            # 1) Carrega a imagem do caminhão
+            self.image = pygame.image.load('CatchTheCoin\Assets2\Caminhao.png').convert_alpha()
+            # 2) Ajusta o tamanho
+            self.image = pygame.transform.scale(self.image, (57*2, 86*2))
+            # 3) Cria o rect a partir da imagem, posicionando em (x,y)
+            self.rect = self.image.get_rect(topleft=(x, y))
+            # 4) Defina uma velocidade aleatória
+            self.speed = random.randint(v_min, v_max)
     def update(self):
         self.rect.y += self.speed
+        # quando sair da tela embaixo, você pode resetar para o topo:
         if self.rect.top > HEIGHT:
-            self.rect.x = random.randint(0, WIDTH - self.rect.width)
-            self.rect.y = random.randint(-50, -10)
-            self.speed = random.uniform(2, 5)
-        # Animação
-        self.frame_counter += self.animation_speed
-        if self.frame_counter >= 1:
-            self.frame_counter = 0
-            self.current_frame = (self.current_frame + 1) % len(self.frames)
-            self.image = self.frames[self.current_frame]
-
+            self.rect.y = random.randint(-100, -10)
+            self.rect.x = random.randint(200, 600)
 # Classe do barco
 class Barco(pygame.sprite.Sprite):
     def __init__(self):
@@ -139,18 +98,16 @@ class Barco(pygame.sprite.Sprite):
 # Variáveis de controle
 #
 nivel = 1
-qtd_moedas, v_min, v_max = configurar_dificuldade(nivel)
-moedas = pygame.sprite.Group()
+caminhao_group = pygame.sprite.Group()
 em_descarga = False
 tempo_descarga = 0
-pontos = 0
+Vida = 5
 
-# Criar moedas iniciais
-for _ in range(qtd_moedas):
-    tipo = random.choice(['ouro', 'prata', 'bronze'])
+# Criar Caminhao iniciais
+for _ in range(qtd_caminhao):
     x = random.randint(200, 600)
     y = random.randint(-100, -10)
-    moedas.add(Moeda(x, y, tipo))
+    caminhao_group.add(Caminhao(x, y,any,3, 6))
 
 # Instanciar o barco
 barco = Barco()
@@ -173,16 +130,12 @@ while running:
     if not em_descarga and barco.carga >= barco.max_carga:
         som_aviso.play()
 
-        # Cria uma lista das moedas no céu (fora do alcance do barco)
-        moedas_no_ceu = [m for m in moedas if m.rect.y < HEIGHT / 2]
-        while moedas_no_ceu:
-            moeda_remover = moedas_no_ceu.pop()
-            moedas.remove(moeda_remover)
+        # Cria uma lista das Caminhao no céu (fora do alcance do barco)
+        Caminhao_estrada = [m for m in caminhao_group if m.rect.y < HEIGHT / 2]
+        while Caminhao_estrada:
+            rem = Caminhao_estrada.pop()
+            caminhao_group.remove(rem)
 
-            # Conta 1 ponto negativo por moeda removida
-            pontos -= 1
-            if pontos < 0:
-                pontos = 0
 
         em_descarga = True
         tempo_descarga = pygame.time.get_ticks()
@@ -198,29 +151,20 @@ while running:
 
     # Atualiza movimento do barco
     barco.update(keys)
-
-    # Atualiza as moedas
-    moedas.update()
-
-    # Detecta colisões entre o barco e as moedas
-    colisoes = pygame.sprite.spritecollide(barco, moedas, True)
-    for moeda in colisoes:
-        barco.carga += VALOR_MOEDAS[moeda.tipo]
-        som_beep.play()
-        pontos += 1
-        # Após capturar uma moeda, cria uma nova
-        '''tipo_random = random.choice(['ouro', 'prata', 'bronze'])
-        x = random.randint(0, WIDTH - 20)
-        y = random.randint(-50, -10)
-        moedas.add(Moeda(x, y, tipo_random)) '''
+    caminhao_group.update()
 
 
-    # Garantir que o número de moedas esteja constante
-    while len(moedas) < qtd_moedas:
-        tipo = random.choice(['ouro', 'prata', 'bronze'])
+    # Detecta colisões entre o barco e as Caminhao
+    colisoes = pygame.sprite.spritecollide(barco, caminhao_group, True)
+    for caminhao in colisoes:
+        Vida -= 1
+
+
+    # Garantir que o número de Caminhao esteja constante
+    while len(caminhao_group) < qtd_caminhao:
         x = random.randint(0, WIDTH - 20)
         y = random.randint(-100, -10)
-        moedas.add(Moeda(x, y, tipo))
+        caminhao_group.add(Caminhao(x, y,any,v_min,v_max))
 
     #
     # Desenhar a tela
@@ -228,13 +172,13 @@ while running:
     screen.blit(background_img, (0, 0))
     # Pode adicionar desenho do porto se desejar
     # screen.blit(port_sprite, port_rect) # nao esquecer de carregar a imagem e criar o rect
-    score_text = f"Pontos: {pontos}"
+    score_text = f"Vida: {Vida}"
     score_surface = FONT.render(score_text, True, (255, 255, 255))
     screen.blit(score_surface, (10, 80))
-    moedas.draw(screen)
+    caminhao_group.draw(screen)
     screen.blit(barco.image, barco.rect)
 
-    # Mostrar quantidade de moedas capturadas
+    # Mostrar quantidade de Caminhao capturadas
     info_text = f'Moedas: {barco.carga}/{barco.max_carga}'
     nivel_text = f'Nível: {nivel}'
     screen.blit(FONT.render(info_text, True, (255, 255, 255)), (10, 10))
@@ -245,7 +189,7 @@ while running:
         nivel += 1
         if nivel > 3:
             nivel = 3  # máximo nível
-        qtd_moedas, v_min, v_max = configurar_dificuldade(nivel)
+        qtd_caminhao, v_min, v_max = configurar_dificuldade(nivel)
 
     # Atualiza a tela
     pygame.display.flip()
