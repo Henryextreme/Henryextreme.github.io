@@ -1,12 +1,11 @@
+from random import choice
+
 import pygame
 import random
 import sys
 
 pygame.init()
 
-# Sons
-som_aviso = pygame.mixer.Sound(r'CatchTheCoin\Assets/Audio/notificacao.mp3')
-som_beep = pygame.mixer.Sound(r'CatchTheCoin\Assets/Audio/beep.mp3')
 
 # Configurações
 WIDTH, HEIGHT = 800, 800
@@ -14,50 +13,75 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 FONT = pygame.font.SysFont(None, 36)
 
+som_caminhao = pygame.mixer.Sound(r'./Assets2/Sounds/PassBy.mp3')
+som_buzina_2 =pygame.mixer.Sound(r'./Assets2/Sounds/Truck-Horn.mp3')
+som_buzina_1 = pygame.mixer.Sound(r'./Assets2/Sounds/Truck-Horn 2.mp3')
+som_batida =pygame.mixer.Sound(r'./Assets2/Sounds/Crash 1.mp3')
+som_batida_2 =pygame.mixer.Sound(r'./Assets2/Sounds/Crash 2.mp3')
+
+pygame.mixer.set_num_channels(20)
+canal_spawn = pygame.mixer.Channel(1)
+canal_batida = pygame.mixer.Channel(2)
+canal_buzina =pygame.mixer.Channel(3)
+
+buzina = [som_buzina_1, som_buzina_2]
+batida = [som_batida, som_batida_2]
+
+qtd_caminhao = 2
+
 # Fundo
-background_img = pygame.image.load(r'CatchTheCoin\Assets2\Road\Road_00.png')
+background_img = pygame.image.load(r'C:\Users\202510776\Documents\Henryextreme.github.io-main\Faculdade\PYGAME\CatchTheCoin\Assets2\Road\Road_00.png')
 background_img = pygame.transform.scale(background_img, (HEIGHT, background_img.get_height()))
 background_img = pygame.transform.scale(background_img, (WIDTH, background_img.get_width()))
 background_img = pygame.transform.rotate(background_img, 90)
 
 # Barco
-barco_sprite_img = pygame.image.load(r'CatchTheCoin/Assets2/Fusca.png').convert_alpha()
+barco_sprite_img = pygame.image.load(r'C:\Users\202510776\Documents\Henryextreme.github.io-main\Faculdade\PYGAME\CatchTheCoin\Assets2\Fusca.png').convert_alpha()
 barco_sprite_img = pygame.transform.smoothscale(barco_sprite_img, (54*1.25, 85*1.25))
 
 def configurar_dificuldade(nivel):
+    qtd_caminhao = 2
     if nivel == 1:
-        return 2, 3, 4
-    elif nivel == 2:
-        return 3, 4, 6
-    elif nivel == 3:
-        return 4, 5, 7
+        v_min, v_max = 7, 9
     else:
-        return 2, 3, 4
+        v_min = 7 + nivel * 1.5
+        v_max = 9 + nivel * 1.5
+    return qtd_caminhao, v_min, v_max
 
 # Controle de faixas
-FAIXAS_X = [200, 400, 600]
+FAIXAS_X = [180, 340, 500]
 faixas_ocupadas = set()
 
 nivel = 1
-qtd_caminhao, v_min, v_max = configurar_dificuldade(nivel)
+qtd_caminhao    ,v_min, v_max = configurar_dificuldade(nivel)
 inicio_tempo_nivel = pygame.time.get_ticks()
 inicio_tempo_geral = pygame.time.get_ticks()
 Vida = 5
 
 class Caminhao(pygame.sprite.Sprite):
     def __init__(self, x, y, tipo, v_min, v_max):
+        if nivel == 1:
+            v_min= 7
+            v_max= 9
+        if nivel > 1:
+            v_min =int( 7 + nivel )
+            v_max =int( 9 + nivel )
+
+
         super().__init__()
-        self.image = pygame.image.load('CatchTheCoin\Assets2\Caminhao.png').convert_alpha()
+        self.image = pygame.image.load('./Assets2/Caminhao.png').convert_alpha()
         self.image = pygame.transform.scale(self.image, (57*2, 86*2))
         self.rect = self.image.get_rect(topleft=(x, y))
         self.speed = random.randint(v_min, v_max)
         self.faixa_x = x
+        self.faixa_y= y
 
     def update(self):
         self.rect.y += self.speed
         if self.rect.top > HEIGHT:
-            if self.faixa_x in faixas_ocupadas:
-                faixas_ocupadas.remove(self.faixa_x)
+            faixas_ocupadas.discard(self.faixa_x)
+            self.kill()
+
             faixa_disponivel = list(set(FAIXAS_X) - faixas_ocupadas)
             if faixa_disponivel:
                 nova_faixa = random.choice(faixa_disponivel)
@@ -73,9 +97,12 @@ class Barco(pygame.sprite.Sprite):
         super().__init__()
         self.image = barco_sprite_img
         self.rect = self.image.get_rect(midbottom=(WIDTH//2, HEIGHT - 100))
-        self.speed = 3
         self.carga = 0
         self.max_carga = 100
+        if nivel == 1:
+            self.speed = 7
+        if nivel > 1:
+            self.speed=int(7+nivel)
 
     def update(self, keys_pressed):
         if keys_pressed[pygame.K_LEFT]:
@@ -100,12 +127,15 @@ def spawn_caminhao():
     faixas_ocupadas.add(x)
     y = random.randint(-100, -10)
     caminhao_group.add(Caminhao(x, y, any, v_min, v_max))
+    canal_spawn.play(som_caminhao)
+    canal_buzina.play(random.choice(buzina))
+
 
 caminhao_group = pygame.sprite.Group()
 barco = Barco()
 
-for _ in range(qtd_caminhao):
-    spawn_caminhao()
+
+
 
 running = True
 while running:
@@ -113,10 +143,9 @@ while running:
 
     # Subir nível a cada 30 segundos
     tempo_atual = pygame.time.get_ticks()
-    if tempo_atual - inicio_tempo_nivel >= 30000:
+    if tempo_atual - inicio_tempo_nivel >= 10000:
         nivel += 1
-        if nivel > 3:
-            nivel = 3
+        Vida += 1
         qtd_caminhao, v_min, v_max = configurar_dificuldade(nivel)
         inicio_tempo_nivel = tempo_atual
 
@@ -136,14 +165,26 @@ while running:
     barco.update(keys)
     caminhao_group.update()
 
+
     # Colisões
     colisoes = pygame.sprite.spritecollide(barco, caminhao_group, True)
     for caminhao in colisoes:
         Vida -= 1
+        canal_batida.play(random.choice(batida))
         if caminhao.faixa_x in faixas_ocupadas:
             faixas_ocupadas.remove(caminhao.faixa_x)
 
-    while len(caminhao_group) < qtd_caminhao:
+    if Vida <= 0:
+        # opcional: desenha “Game Over” antes de sair
+        game_over_surf = FONT.render("GAME OVER", True, (255, 0, 0))
+        screen.blit(game_over_surf, (WIDTH // 2 - game_over_surf.get_width() // 2,
+                                     HEIGHT // 2 - game_over_surf.get_height() // 2))
+        pygame.display.flip()
+        pygame.time.delay(3000)  # espera 2 segundos
+        running = False
+        continue  # pula resto do loop para sair imediatamente
+
+    if len(caminhao_group) < qtd_caminhao:
         spawn_caminhao()
 
     screen.blit(background_img, (0, 0))
