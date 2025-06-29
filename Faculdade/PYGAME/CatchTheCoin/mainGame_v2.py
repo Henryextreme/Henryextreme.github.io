@@ -86,17 +86,23 @@ class Caminhao(pygame.sprite.Sprite):
         self.rect.y += self.speed
         if self.rect.top > HEIGHT:
             faixas_ocupadas.discard(self.faixa_x)
-            self.kill()
+            
 
             faixa_disponivel = list(set(FAIXAS_X) - faixas_ocupadas)
             if faixa_disponivel:
                 nova_faixa = random.choice(faixa_disponivel)
-                faixas_ocupadas.add(nova_faixa)
-                self.faixa_x = nova_faixa
-                self.rect.x = nova_faixa
             else:
-                self.rect.x = self.faixa_x
+                nova_faixa = self.faixa_x
+
+            self.rect.x = nova_faixa
+            self.faixa_x = nova_faixa
             self.rect.y = random.randint(-100, -10)
+            self.speed = random.randint(int(7 + nivel), int(9 + nivel))  # atualiza velocidade
+            faixas_ocupadas.add(nova_faixa)
+            canal_spawn.play(som_caminhao)
+            canal_buzina.play(random.choice(buzina))
+            
+
 
 class Barco(pygame.sprite.Sprite):
     def __init__(self):
@@ -106,7 +112,7 @@ class Barco(pygame.sprite.Sprite):
         self.carga = 0
         self.max_carga = 100
         if nivel == 1:
-            self.speed = 7
+            self.speed = 9
         if nivel > 1:
             self.speed=int(7+nivel)
 
@@ -203,6 +209,28 @@ while running:
     screen.blit(vida_text, (10, 80))
     screen.blit(nivel_text, (10, 50))
     screen.blit(tempo_surface, (10, 110))  # mostra o tempo no canto
+
+    mensagem = "Desvie dos caminhões!"
+    texto_direita = FONT.render(mensagem, True, (255, 255, 0))  # cor amarela
+    pos_x = WIDTH - texto_direita.get_width() - 10
+    pos_y = 10
+    screen.blit(texto_direita, (pos_x, pos_y))
+
+    if tempo_segundos < 10:
+        mensagem = "Use as setas para se movimentar"
+        texto_direita = FONT.render(mensagem, True, (255, 255, 0))  # cor amarela
+        pos_x = WIDTH - texto_direita.get_width() - 10
+        pos_y = 40
+        screen.blit(texto_direita, (pos_x, pos_y))
+
+        mensagem = "A cada 10 segs o jogo fica mais dificil"
+        texto_direita = FONT.render(mensagem, True, (255, 255, 0))  # cor amarela
+        pos_x = WIDTH - texto_direita.get_width() - 10
+        pos_y = 70
+        screen.blit(texto_direita, (pos_x, pos_y))
+    
+
+    
 
     pygame.display.flip()
 
