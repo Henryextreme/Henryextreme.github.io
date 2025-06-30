@@ -13,11 +13,11 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 FONT = pygame.font.SysFont(None, 36)
 
-som_caminhao = pygame.mixer.Sound(r'.\CatchTheCoin\Assets2\Sounds\PassBy.mp3')
-som_buzina_2 =pygame.mixer.Sound(r'.\CatchTheCoin\Assets2\Sounds\Truck-Horn.mp3')
-som_buzina_1 = pygame.mixer.Sound (r'.\CatchTheCoin\Assets2\Sounds\Truck-Horn 2.mp3')
-som_batida =pygame.mixer.Sound(r'.\CatchTheCoin\Assets2\Sounds\Crash 1.mp3')
-som_batida_2 =pygame.mixer.Sound(r'.\CatchTheCoin\Assets2\Sounds\Crash 2.mp3')
+som_caminhao = pygame.mixer.Sound(r'./CatchTheCoin/Assets2/Sounds/PassBy.mp3')
+som_buzina_2 =pygame.mixer.Sound(r'./CatchTheCoin/Assets2/Sounds/Truck-Horn.mp3')
+som_buzina_1 = pygame.mixer.Sound (r'./CatchTheCoin/Assets2/Sounds/Truck-Horn 2.mp3')
+som_batida =pygame.mixer.Sound(r'./CatchTheCoin/Assets2/Sounds/Crash 1.mp3')
+som_batida_2 =pygame.mixer.Sound(r'./CatchTheCoin/Assets2/Sounds/Crash 2.mp3')
 
 som_caminhao.set_volume(0.2)
 som_buzina_2.set_volume(0.2)
@@ -36,13 +36,13 @@ batida = [som_batida, som_batida_2]
 qtd_caminhao = 2
 
 # Fundo
-background_img = pygame.image.load(r'.\CatchTheCoin\Assets2\Road\Road_00.png')
+background_img = pygame.image.load(r'./CatchTheCoin/Assets2/Road/Road_00.png')
 background_img = pygame.transform.scale(background_img, (HEIGHT, background_img.get_height()))
 background_img = pygame.transform.scale(background_img, (WIDTH, background_img.get_width()))
 background_img = pygame.transform.rotate(background_img, 90)
 
 # Barco
-barco_sprite_img = pygame.image.load(r'.\CatchTheCoin\Assets2\Fusca.png').convert_alpha()
+barco_sprite_img = pygame.image.load(r'./CatchTheCoin/Assets2/Fusca.png').convert_alpha()
 barco_sprite_img = pygame.transform.smoothscale(barco_sprite_img, (54*1.25, 85*1.25))
 
 def configurar_dificuldade(nivel):
@@ -75,7 +75,7 @@ class Caminhao(pygame.sprite.Sprite):
 
 
         super().__init__()
-        self.image = pygame.image.load(r'.\CatchTheCoin\Assets2\Caminhao.png').convert_alpha()
+        self.image = pygame.image.load(r'./CatchTheCoin/Assets2/Caminhao.png').convert_alpha()
         self.image = pygame.transform.scale(self.image, (57*2, 86*2))
         self.rect = self.image.get_rect(topleft=(x, y))
         self.speed = random.randint(v_min, v_max)
